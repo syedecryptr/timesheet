@@ -1,3 +1,17 @@
+## Table of contents
+* [Requirements](#Requirements)
+* [Setup](#setup)
+* [Initiate](#Initiate)
+
+## Requirements
+	selenium==3.141.0
+	
+
+## Setup
+To run, install chromedriver correponding to your chrome version from :
+https://chromedriver.chromium.org/
+
+
 Move downloaded chrome driver in the same folder.
 Current chromedriver present in the repo is for version 80.0.3987.106
 
