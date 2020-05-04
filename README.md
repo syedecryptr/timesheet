@@ -11,6 +11,8 @@
 To run, install chromedriver correponding to your chrome version from :
 https://chromedriver.chromium.org/
 
+To check chrome version:
+https://www.howtogeek.com/299243/which-version-of-chrome-do-i-have/
 
 Move downloaded chrome driver in the same folder.
 Current chromedriver present in the repo is for version 80.0.3987.106
