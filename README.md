@@ -1,6 +1,7 @@
 Move downloaded chrome driver in the same folder.
 Current chromedriver present in the repo is for version 80.0.3987.106
 
+Edit creds.txt with your credentials.
 
 ## Initiate
 	python main.py
