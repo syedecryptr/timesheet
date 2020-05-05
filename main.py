@@ -7,6 +7,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.alert import Alert
+from datetime import datetime
 
 import time
 # chrome driver download it first.
@@ -149,11 +150,19 @@ def copy_efforts(driver):
 
 
 if __name__=="__main__":
+	old_stdout = sys.stdout
+	log_file = open("log.txt","a")
+	sys.stdout = log_file
+	sys.stderr = sys.stdout
+
 	CHROMEDRIVER_PATH = './chromedriver'
 	WINDOW_SIZE = "960,1080"
 	chrome_options = Options()
-	# chrome_options.add_argument("--headless")
+	chrome_options.add_argument("--headless")
 	chrome_options.add_argument("--window-size=%s" % WINDOW_SIZE)
+	now = datetime.now()
+	date_time = now.strftime("%m/%d/%Y, %H:%M:%S")
+	print("starting filling timesheet...", date_time)
 	# chrome_options.add_argument('--no-sandbox')
 
 	# chrome_options.add_experimental_option("debuggerAddress", "127.0.0.1:4756")
@@ -171,3 +180,9 @@ if __name__=="__main__":
 	#Step 4 end it
 	print("Closing browser...")
 	driver.close()
+	now = datetime.now()
+	date_time = now.strftime("%m/%d/%Y, %H:%M:%S")
+	print("Filling timesheet done ...", date_time, "\n\n")
+
+	sys.stdout = old_stdout
+	log_file.close()
