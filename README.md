@@ -27,6 +27,9 @@ Edit creds.txt with your credentials.
 
 To start script at 2:00pm everyday.
     
+    add an alias of the chromedriver in the /usr/bin directory:
+    sudo ln -s /path/to/chromedriver /usr/bin
+    
     Make the script executable by:
     chmod u+x /path/to/main.py
     
