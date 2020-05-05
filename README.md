@@ -37,5 +37,5 @@ To start script at 2:00pm everyday.
     crontab -e 
 
     Add the following cron entry:
-     0 14 * * * /usr/bin/env python /path/to/main.py
+    0 14 * * * cd /path/to/timesheet/ && /usr/bin/env python main.py
  
