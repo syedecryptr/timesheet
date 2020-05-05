@@ -28,7 +28,7 @@ Edit creds.txt with your credentials.
 To start script at 2:00pm everyday.
     
     Make the script executable by:
-    chmod u+x /path/to/script.py
+    chmod u+x /path/to/main.py
     
     Open your cron table by
     crontab -e 
