@@ -56,7 +56,7 @@ def login(driver, username, password):
 def remove_shit(driver):
 	wait = WebDriverWait(driver, 100)
 	time.sleep(3)
-	element = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="ultimatixAlertPopUp"]/div[4]/input')))
+	element_ = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="ultimatixAlertPopUp"]/div[4]/input')))
 	print("Removing the ultimatix popup...")
 	driver.find_element_by_xpath('//*[@id="ultimatixAlertPopUp"]/div[4]/input').click()
 	
@@ -67,7 +67,7 @@ def remove_shit(driver):
 	time.sleep(5)
 	print("Filling the location part1...")
 	element_ = wait.until(EC.element_to_be_clickable((By.XPATH, "//*[@id='branch_lookup']/div[4]/div[1]/div[3]/table/tbody/tr[1]/td[2]/span/select")))
-	element=driver.find_element_by_xpath("//*[@id='branch_lookup']/div[4]/div[1]/div[3]/table/tbody/tr[1]/td[2]/span/select")
+	element = driver.find_element_by_xpath("//*[@id='branch_lookup']/div[4]/div[1]/div[3]/table/tbody/tr[1]/td[2]/span/select")
 	element.click()
 	all_options = element.find_elements_by_tag_name("option")
 	for option in all_options:
@@ -107,6 +107,7 @@ def copy_efforts(driver):
 	time.sleep(3)
 	#remove ultimatix popup
 	print("Removing the ultimatix popup...")
+	element_ = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="ultimatixAlertPopUp"]/div[4]/input')))
 	driver.find_element_by_xpath('//*[@id="ultimatixAlertPopUp"]/div[4]/input').click()
 	
 	
@@ -133,6 +134,7 @@ def copy_efforts(driver):
 	#remove ultimatix popup
 	time.sleep(3)
 	print("Removing the ultimatix popup...")
+	element_ = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="ultimatixAlertPopUp"]/div[4]/input')))
 	driver.find_element_by_xpath('//*[@id="ultimatixAlertPopUp"]/div[4]/input').click()
 	time.sleep(2)
 	#Go again to current month 
@@ -143,6 +145,7 @@ def copy_efforts(driver):
 	Alert(driver).accept()
 	#remove ultimatix popup
 	time.sleep(3)
+	element_ = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="ultimatixAlertPopUp"]/div[4]/input')))
 	print("Removing the ultimatix popup...")
 	driver.find_element_by_xpath('//*[@id="ultimatixAlertPopUp"]/div[4]/input').click()
 
@@ -182,7 +185,7 @@ if __name__=="__main__":
 	driver.close()
 	now = datetime.now()
 	date_time = now.strftime("%m/%d/%Y, %H:%M:%S")
-	print("Filling timesheet done ...", date_time, "\n\n")
+	print("Filling timesheet done ...", date_time)
 
 	sys.stdout = old_stdout
 	log_file.close()
